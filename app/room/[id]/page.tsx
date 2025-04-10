@@ -1,15 +1,8 @@
 // app/room/[id]/page.tsx
-'use client';
-
-import { useParams } from 'next/navigation';
-
-export default function RoomPage() {
-  const params = useParams();
-  const roomId = params.id;
-
+export default function RoomPage({ params }: { params: { id: string } }) {
   return (
     <div>
-      <h1>Room ID: {roomId}</h1>
+      <h1>Room ID: {params.id}</h1>
     </div>
   );
 }
